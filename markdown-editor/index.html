@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Markdown Editor</title>
+        <style type="text/css">
+        body {
+            font: 14px/1.5 Helvetica, Sans-Serif;
+        }
+        /* rendered output will automagically conform to the size of the textarea */
+        textarea {
+            height: 33vh;
+            width: 75vw;
+        }
+        /* use .rendered-markdown to style the rendered output */
+        .rendered-markdown {
+            border: solid 1px #333;
+        }
+        .rendered-markdown h1,
+        .rendered-markdown h2,
+        .rendered-markdown h3,
+        .rendered-markdown p,
+        .rendered-markdown blockquote,
+        .rendered-markdown pre {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .rendered-markdown hr {
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Markdown Editor</h1>
+        <p><a href="https://github.com/segdeha/markdown-editor">Markdown Editor</a> is a <a href="http://jquery.com">jQuery</a> plugin that will display a Markdown-rendered version of text in a <code>&lt;textarea&gt;</code> field.</p>
+
+        <!-- editor 1 -->
+        <textarea name="editor"># Markdown Editor Demo
+
+Click in this box to edit the [Markdown](https://daringfireball.net/projects/markdown/syntax). Click outside the box to see it rendered.
+
+Most Markdown features are supported, including:
+
+1. Headers
+1. Links
+1. Lists
+1. Formatting like **strong** and _emphasis_
+1. Inline `code snippets` and blocks (scroll down for an example)
+1. Images
+
+-----
+
+Rendered output is scrollable. Scroll down!
+
+    var this = is.a.code.block();
+
+![Pizza cat riding taco turtle](https://s-media-cache-ak0.pinimg.com/736x/9e/e1/c4/9ee1c48fd0d37e47850dd63d4e60cc53.jpg "Pizza cat riding taco turtle")</textarea>
+
+        <!-- editor 2-->
+        <textarea name="editor2"># Markdown Second Editor Demo
+
+You can even have multiple editors on the page at one time!</textarea>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="markdown.js"></script>
+        <script src="jquery-mdeditor.js"></script>
+        <script type="text/javascript">
+        // create editor instance once the DOM has loaded
+        $(function () {
+            var editor = $('[name="editor"]').mdEditor();
+            var editor2 = $('[name="editor2"]').mdEditor();
+        });
+        </script>
+    </body>
+</html>
